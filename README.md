@@ -2,6 +2,8 @@
 A TkInter wrapper for python inspired by the GUI library Shoes for Ruby.
 
 Not a complete library by any means but just a way to test out a few ideas.
+
+This is intended to make it easier to create simple GUI interfaces quickly.
 How to create windows
 --
 
