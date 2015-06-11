@@ -81,7 +81,7 @@ where clicking the first button will change the text at the top of the window, a
 Complete example
 --
 
-example.py has a more complete example of how to use the different methods, context managers, etc.
+`example.py` has a more complete example of how to use the different methods, context managers, etc.
 
 3rd-party content
 --
