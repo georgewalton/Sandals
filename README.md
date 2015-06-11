@@ -57,8 +57,7 @@ with window("This is a window"):
 	label("This is a label", font = "Verdana 24 bold underline")
 	
 	with stack(padx=10):
-		myLabelText = "This text changes"
-		myLabel = label(myLabelText)
+		myLabel = label("This text changes")
 		
 		@button("Change the above text", font = "Veranda 12 italic")
 		def change_that_text():
