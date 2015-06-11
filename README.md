@@ -76,6 +76,11 @@ looks like this;
 
 where clicking the first button will change the text at the top of the window, and clicking the second button will create a popup displaying the text that has been entered into the edit box.
 
+Complete example
+--
+
+example.py has a more complete example of how to use the different methods, context managers, etc.
+
 3rd-party content
 --
 
