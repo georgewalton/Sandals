@@ -83,6 +83,10 @@ Complete example
 
 `example.py` has a more complete example of how to use the different methods, context managers, etc.
 
+Todo
+--
+Ideally this library should be rewritten at some point to use TkInter grids, instead of just packing GUI elements, which is how it is implemented at the moment.
+
 3rd-party content
 --
 
