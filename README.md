@@ -63,7 +63,7 @@ def ovenState(option):
 ```
 
 All these decorators can also be used as classes where this is more convenient.
-@repeat and @loop decorators
+The @repeat and @loop decorators
 ---
 Two new decorators are included which you might not necessarily associate with a GUI library - these are the @repeat and @loop decorators.
 
