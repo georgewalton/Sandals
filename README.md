@@ -23,7 +23,7 @@ The way stacks and flows work was intended to be the same as with the Ruby libra
 Info on how they're meant to work can be found on the Ruby Shoes website: http://shoesrb.com/
 
 As mentioned below, the library needs to be ideally be rewritten to use TkInter grids, rather than just packing elements in different ways.
-The @button and other decorators
+The @button and other GUI decorators
 --
 
 Adding the decorator 
