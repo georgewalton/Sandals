@@ -40,8 +40,17 @@ will create a window with a button, which when clicked will create a popup;
 
 ![Button example](https://raw.githubusercontent.com/georgewalton/Sandals/master/example%20images/buttonexample.png "Button example")
 
+Checkboxes, radio buttons, spin boxes, scale bars, and option menus all can use ddecorators in a similar way. For example, here is a simple implementation of a check box to change a boolean; 
+
+'''
+@checkBox("Is the oven on?", checked = True)
+	def check(checked):
+		ovenOn = checked
+'''
+
 The way stacks and flows work was intended to be the same as with the Ruby library Shoes, but it's not quite there yet.
 Info on how they're meant to work can be found on the Ruby Shoes website: http://shoesrb.com/
+As mentioned below, the library needs to be ideally be rewritten to use TkInter grids, rather than just packing elements in different ways.
 Changing and reading text in GUI elements
 --
 
