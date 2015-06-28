@@ -18,7 +18,7 @@ with window("My window"):
 creates a window with the text "Hello world" in it;
 
 ![Hello world](https://raw.githubusercontent.com/georgewalton/Sandals/master/example%20images/helloworld.png "Hello world")
-The @button decorator
+The @button and other decorator
 --
 
 Adding the decorator 
@@ -42,11 +42,11 @@ will create a window with a button, which when clicked will create a popup;
 
 Checkboxes, radio buttons, spin boxes, scale bars, and option menus all can use ddecorators in a similar way. For example, here is a simple implementation of a check box to change a boolean; 
 
-'''
+```python
 @checkBox("Is the oven on?", checked = True)
 	def check(checked):
 		ovenOn = checked
-'''
+```
 
 The way stacks and flows work was intended to be the same as with the Ruby library Shoes, but it's not quite there yet.
 Info on how they're meant to work can be found on the Ruby Shoes website: http://shoesrb.com/
