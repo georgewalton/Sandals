@@ -45,12 +45,21 @@ will create a window with a button, which when clicked will create a popup;
 
 ![Button example](https://raw.githubusercontent.com/georgewalton/Sandals/master/example%20images/buttonexample.png "Button example")
 
-Checkboxes, radio buttons, spin boxes, scale bars, and option menus can all be applied as decorators in a similar way. For example, here is a simple implementation of a check box to change a boolean; 
+Checkboxes, radio buttons, spin boxes, scale bars, and option menus can all be applied as decorators in a similar way.
+For example, here is a simple implementation of a check box to change a boolean; 
 
 ```python
 @checkBox("Is the oven on?", checked = True)
-	def check(checked):
-		theOvenIsOn = checked
+def check(checked):
+	theOvenIsOn = checked
+```
+
+And here is a simple example of how to implement an options menu;
+
+```python
+@optionMenu("clean", "dirty", "broken")
+def ovenState(option):
+	print "The oven is", option
 ```
 
 All these decorators can also be used as classes where this is more convenient.
