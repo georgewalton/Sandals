@@ -63,7 +63,8 @@ def ovenState(option):
 ```
 
 All these decorators can also be used as classes where this is more convenient.
-
+@repeat and @loop decorators
+---
 Two new decorators are included which you might not necessarily associate with a GUI library - these are the @repeat and @loop decorators.
 
 These create a thread that repeats or loops the function the decorator is applied to. Once the context the decorated function is defined in is destroyed (e.g. closing a window) then that thread is stopped and the function will stop repeating or looping. As an example, here is a function that repeats once a minute;
