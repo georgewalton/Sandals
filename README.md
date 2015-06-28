@@ -35,7 +35,6 @@ to a function adds a button that triggers that function.
 For example;
 ```python
 with window():
-
   @button("Create a popup box")
   def makePopupBox():
     showInfo(message = "You clicked the button")
@@ -57,6 +56,7 @@ def ovenOn(checked):
 And here is a simple example of how to implement an options menu;
 
 ```python
+label("How's the oven?")
 @optionMenu("clean", "dirty", "broken")
 def ovenState(option):
 	print "The oven is", option
