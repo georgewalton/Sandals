@@ -50,7 +50,7 @@ For example, here is a simple implementation of a check box to change a boolean;
 
 ```python
 @checkBox("Is the oven on?", checked = True)
-def check(checked):
+def ovenOn(checked):
 	theOvenIsOn = checked
 ```
 
