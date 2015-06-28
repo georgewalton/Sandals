@@ -3,7 +3,7 @@ A TkInter wrapper for python inspired by the GUI library Shoes for Ruby.
 
 Not a complete library by any means but just a way to test out a few ideas.
 
-This is intended to make it easier to create simple GUI interfaces quickly.
+This is intended to make it easier to create simple GUI interfaces quickly. All these classes inhered from their TkInter counterparts so you can use them just as you would their original TkInter counterparts if need be.
 How to create windows
 --
 
@@ -18,7 +18,7 @@ with window("My window"):
 creates a window with the text "Hello world" in it;
 
 ![Hello world](https://raw.githubusercontent.com/georgewalton/Sandals/master/example%20images/helloworld.png "Hello world")
-The @button and other decorator
+The @button and other decorators
 --
 
 Adding the decorator 
@@ -46,6 +46,18 @@ Checkboxes, radio buttons, spin boxes, scale bars, and option menus all can use 
 @checkBox("Is the oven on?", checked = True)
 	def check(checked):
 		ovenOn = checked
+```
+
+All these decorators can be used as classes where this is more convenient.
+
+Two new decorators which are included which you would not necessarily associate with a GUI library - these are the @repeat and @loop decorators.
+
+These behave as you would expect; they create a thread that repeats or loops the function the decorator is appended to. Once the context the decorated function is defined in is destroyed (e.g. closing a window) then that thread is stopped and the function will stop looping. As an example, here is a function that repeats once a minute;
+
+```python
+@repeat(60)
+def clock():
+	print "A minute has passed"
 ```
 
 The way stacks and flows work was intended to be the same as with the Ruby library Shoes, but it's not quite there yet.
