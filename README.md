@@ -35,6 +35,7 @@ to a function adds a button that triggers that function.
 For example;
 ```python
 with window():
+
   @button("Create a popup box")
   def makePopupBox():
     showInfo(message = "You clicked the button")
