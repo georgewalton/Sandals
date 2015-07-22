@@ -151,6 +151,7 @@ class button(tkinter.Button, object):
 		self.pack( side = _pack_side )
 		
 	def __call__(self, func):
+		func.button = self
 		self.config(command = lambda: func())
 		return func
 		
