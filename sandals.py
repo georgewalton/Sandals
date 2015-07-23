@@ -8,6 +8,33 @@ try: # python 3
 	from tkinter import simpledialog
 	from tkinter import scrolledtext
 	from tkinter import Scrollbar
+	
+	from tkinter import N
+	from tkinter import NE
+	from tkinter import E
+	from tkinter import SE
+	from tkinter import S
+	from tkinter import SW
+	from tkinter import W
+	from tkinter import NW
+	
+	from tkinter import CENTER
+	from tkinter import BOTTOM
+	from tkinter import LEFT
+	from tkinter import RIGHT
+	from tkinter import TOP
+	from tkinter import NONE
+	
+	from tkinter import NORMAL
+	from tkinter import ACTIVE
+	from tkinter import DISABLED
+	
+	from tkinter import FLAT
+	from tkinter import RAISED
+	from tkinter import SUNKEN
+	from tkinter import GROOVE
+	from tkinter import RIDGE
+	
 except ImportError: # python 2
 	import Tkinter as tkinter
 	import tkMessageBox as messagebox
@@ -15,6 +42,26 @@ except ImportError: # python 2
 	import tkSimpleDialog as simpledialog
 	import ScrolledText as scrolledtext
 	from Tkinter import Scrollbar
+	
+	from Tkinter import N
+	from Tkinter import NE
+	from Tkinter import E
+	from Tkinter import SE
+	from Tkinter import S
+	from Tkinter import SW
+	from Tkinter import W
+	from Tkinter import NW
+	
+	from Tkinter import CENTER
+	from Tkinter import BOTTOM
+	from Tkinter import LEFT
+	from Tkinter import RIGHT
+	from Tkinter import TOP
+	from Tkinter import NONE
+	
+	from Tkinter import NORMAL
+	from Tkinter import ACTIVE
+	from Tkinter import DISABLED
 	
 _root = None
 _pack_side = None
@@ -47,12 +94,12 @@ class window(tkinter.Tk):
 
 		# create scroll bar
 		self.vscrollbar = AutoScrollbar(self)
-		self.vscrollbar.grid(row=0, column=1, sticky=tkinter.N+tkinter.S)
+		self.vscrollbar.grid(row=0, column=1, sticky=N+S)
 
 		# create canvas
 		self.canvas = tkinter.Canvas(self,
 						yscrollcommand=self.vscrollbar.set, bd=5)
-		self.canvas.grid(row=0, column=0, sticky=tkinter.N+tkinter.S+tkinter.E+tkinter.W)
+		self.canvas.grid(row=0, column=0, sticky=N+S+E+W)
 
 		# configure scroll bar for canvas
 		self.vscrollbar.config(command=self.canvas.yview)
@@ -67,7 +114,7 @@ class window(tkinter.Tk):
 		self.frame.columnconfigure(1, weight=1)
 		
 
-		_pack_side = tkinter.TOP
+		_pack_side = TOP
 		_root = self.frame
 		return _root
 		
@@ -75,11 +122,11 @@ class window(tkinter.Tk):
 		global _root, _pack_side
 		
 		# puts tkinter widget onto canvas
-		self.canvas.create_window(0, 0, anchor=tkinter.NW, window=self.frame, width = int(self.canvas.config()['width'][4])-int(self.vscrollbar.config()['width'][4]))
+		self.canvas.create_window(0, 0, anchor=NW, window=self.frame, width = int(self.canvas.config()['width'][4])-int(self.vscrollbar.config()['width'][4]))
 
 		# deal with canvas being resized
 		def resize_canvas(event):
-			self.canvas.create_window(0, 0, anchor=tkinter.NW, window=self.frame, width = int(event.width)-int(self.vscrollbar.config()['width'][4]))
+			self.canvas.create_window(0, 0, anchor=NW, window=self.frame, width = int(event.width)-int(self.vscrollbar.config()['width'][4]))
 		self.canvas.bind("<Configure>", resize_canvas)
 
 		# updates geometry management
@@ -128,7 +175,7 @@ class stack(slot):
 	def __enter__(self):
 		global _pack_side
 		slot.__enter__(self)
-		_pack_side = tkinter.TOP
+		_pack_side = TOP
 		return _root
 		
 class flow(slot):
@@ -137,7 +184,7 @@ class flow(slot):
 	def __enter__(self):
 		global _pack_side
 		slot.__enter__(self)
-		_pack_side = tkinter.LEFT
+		_pack_side = LEFT
 		return _root
 		
 class button(tkinter.Button, object):
@@ -188,7 +235,7 @@ class message(tkinter.Message, object):
 		self.textvariable.set(self.kw['text'] if 'text' in self.kw else text)
 		if 'text' in self.kw:
 			del self.kw['text']
-		tkinter.Message.__init__(self, _root, textvariable=self.textvariable, anchor=tkinter.NW, **kw)
+		tkinter.Message.__init__(self, _root, textvariable=self.textvariable, anchor=NW, **kw)
 		self.pack( side=_pack_side )
 		
 	@property
@@ -320,19 +367,19 @@ class scrolledText(scrolledtext.ScrolledText, object):
 		scrolledtext.ScrolledText.__init__(self, _root, bg=bg, height=height, **kw)
 		self.insert(tkinter.END, text)
 		if not editable:
-			self.config(state=tkinter.DISABLED)
+			self.config(state=DISABLED)
 		self.pack(fill=tkinter.BOTH, side=_pack_side, expand=expand)
 		
 	@property
 	def editable(self):
-		return self.state==tkinter.NORMAL
+		return self.state==NORMAL
 	
 	@editable.setter
 	def editable(self, editable):
 		if editable:
-			self.config(state=tkinter.NORMAL)
+			self.config(state=NORMAL)
 		else:
-			self.config(state=tkinter.DISABLED)
+			self.config(state=DISABLED)
 	
 class checkBox(tkinter.Checkbutton, object):
 	def __init__(self, text="", checked=False, *args, **kwargs):
@@ -435,10 +482,10 @@ class scaleBar(tkinter.Scale, object):
 	@value.setter
 	def value(self, value):
 		if not self.enabled:
-			self.config(state=tkinter.NORMAL)
+			self.config(state=NORMAL)
 		self.set(value)
 		if not self.enabled:
-			self.config(state=tkinter.DISABLED)
+			self.config(state=DISABLED)
 		
 	@property
 	def enabled(self):
@@ -448,9 +495,9 @@ class scaleBar(tkinter.Scale, object):
 	def enabled(self, enabled):
 		self._enabled = enabled
 		if enabled:
-			self.config(state=tkinter.NORMAL)
+			self.config(state=NORMAL)
 		else:
-			self.config(state=tkinter.DISABLED)
+			self.config(state=DISABLED)
 			
 class optionMenu(tkinter.OptionMenu, object):
 	def __init__(self, *values, **kw):
