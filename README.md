@@ -75,7 +75,9 @@ Because these decorators inherit from their TkInter classes, they can be used as
 
 Buttons can be altered even when created as a decorator, as they are added as a function attribute of the function they are applied to, e.g.  ```my_function.button```.
 
-Here is an example where this is used to disable a button that is created using a decorator;
+The TkInter adjectives used to modify buttons, such as ```DISABLE``` and  ```NORMAL``` to describe the state of a disabled and enabled button respectively, are imported as well.
+
+Here is an example where this is used to disable a button created using a decorator;
 
 ```python
 with window():
