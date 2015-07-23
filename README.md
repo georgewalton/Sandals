@@ -71,9 +71,9 @@ def ovenState(option):
 All these decorators can also be used as classes where this is more convenient.
 Manipulating buttons
 ---
-Because these decorators inherit from their TkInter classes, they can be used as normal (i.e. not as decorators) and then altered using ```.config(**kwargs)```.
+Because these decorators inherit from their TkInter classes, they can be used as normal (i.e. not as decorators) and then altered using ```my_button.config(**kwargs)```.
 
-Buttons can be altered even when created as a decorator, as they made a function attribute of the function they are applied to, e.g.  ```function.button```.
+Buttons can be altered even when created as a decorator, as they are added as a function attribute of the function they are applied to, e.g.  ```my_function.button```.
 
 Here is an example where this is used to disable a button that is created using a decorator;
 
