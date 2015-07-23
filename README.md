@@ -8,8 +8,8 @@ This is intended to make it easier to create simple GUI interfaces quickly. All 
 To use this library I'd reccommend simply adding this to the top of your script;
 ```python
 from sandals import *
-All the examples below assume this line is at the top of the file.
 ```
+__All the examples below assume this line is at the top of the file.__
 How to create windows
 --
 
