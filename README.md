@@ -9,7 +9,7 @@ To use this library I'd reccommend simply adding this to the top of your script;
 ```python
 from sandals import *
 ```
-__All the examples below assume this line is at the top of the file.__
+_All the examples below assume this line is at the top of the file._
 How to create windows
 --
 
