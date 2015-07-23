@@ -69,6 +69,28 @@ def ovenState(option):
 ```
 
 All these decorators can also be used as classes where this is more convenient.
+Manipulating buttons
+---
+Because these decorators inherit from their TkInter classes, they can be used as normal (i.e. not as decorators) and then altered using ```.config(**kwargs)```.
+
+Buttons can be altered even when created as a decorator, as they made a function attribute of the function they are applied to, e.g.  ```function.button```.
+
+Here is an example where this is used to disable a button that is created using a decorator;
+
+```python
+with window():
+	@button("This button does nothing")
+	def doNothing():
+		pass
+
+	@button("Disable button")
+	def disableButton():
+		doNothing.button.config(state = DISABLED)
+```
+
+which looks like;
+
+![Simple example](https://raw.githubusercontent.com/georgewalton/Sandals/master/example%20images/manipulatingbuttonsexample.png "Simple example")
 The @repeat and @loop decorators
 ---
 Two new decorators are included which you might not necessarily associate with a GUI library - these are the @repeat and @loop decorators.
