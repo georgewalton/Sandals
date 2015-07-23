@@ -8,6 +8,7 @@ This is intended to make it easier to create simple GUI interfaces quickly. All 
 To use this library I'd reccommend simply adding this to the top of your script;
 ```python
 from sandals import *
+All the examples below assume this line is at the top of the file.
 ```
 How to create windows
 --
@@ -115,8 +116,6 @@ How the text in labels and other GUI elements is changed to try and make them ea
 A slightly more complex example;
 
 ```python
-from sandals import *
-
 with window("This is a window"):
 
 	label("This is a label", font = "Verdana 24 bold underline")
