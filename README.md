@@ -1,8 +1,6 @@
 # Sandals
 A TkInter wrapper for python inspired by the GUI library Shoes for Ruby.
 
-Not a fully complete library by but a nice way to test out a few ideas.
-
 This is intended to make it easier to create simple GUI interfaces quickly. All these classes inheret from their TkInter counterparts so you can use them just as you would their original TkInter counterparts if need be.
 
 To use this library I'd reccommend simply adding this to the top of your script;
