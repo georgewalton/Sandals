@@ -191,7 +191,8 @@ with window("This is a window"):
             @button("<-read edit box")
             def read_edit_box():
                 showInfo(message
-				= "Edit box says: " + edit.text)
+				= "Edit box says: "
+				+ edit.text)
 </pre>
 </td>
 <td>
