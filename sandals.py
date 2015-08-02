@@ -66,6 +66,12 @@ except ImportError: # python 2
 	from Tkinter import ACTIVE
 	from Tkinter import DISABLED
 	
+	from Tkinter import FLAT
+	from Tkinter import RAISED
+	from Tkinter import SUNKEN
+	from Tkinter import GROOVE
+	from Tkinter import RIDGE
+	
 	from Tkinter import TRUE
 	from Tkinter import FALSE
 	
