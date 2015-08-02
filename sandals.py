@@ -35,6 +35,9 @@ try: # python 3
 	from tkinter import GROOVE
 	from tkinter import RIDGE
 	
+	from tkinter import TRUE
+	from tkinter import FALSE
+	
 except ImportError: # python 2
 	import Tkinter as tkinter
 	import tkMessageBox as messagebox
@@ -62,6 +65,9 @@ except ImportError: # python 2
 	from Tkinter import NORMAL
 	from Tkinter import ACTIVE
 	from Tkinter import DISABLED
+	
+	from Tkinter import TRUE
+	from Tkinter import FALSE
 	
 _root = None
 _pack_side = None
@@ -116,7 +122,7 @@ class window(tkinter.Tk):
 
 		_pack_side = TOP
 		_root = self.frame
-		return _root
+		return self # was _root for some reason
 		
 	def __exit__(self, type, value, traceback):
 		global _root, _pack_side
